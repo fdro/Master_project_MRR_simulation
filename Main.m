@@ -95,7 +95,7 @@ total_L   = Warm1 + Ltrain + Warm2 + Ltest;             % Total number of bits f
 % N_mask_raw) is not an integer, the function "change_N_mask" will alter the
 % values of
 % either N_mask_raw, steps_per_bit or both in order to fulfill the demand.
-N_mask_raw = 200;                                         % Number of wanted virtal nodes.
+N_mask_raw = 50;                                         % Number of wanted virtal nodes.
 steps_per_bit_raw = 1000;                                 % Time steps per bit. Must be an integer.
 [N_mask, steps_per_bit] = change_N_mask_Github(steps_per_bit_raw, N_mask_raw); 
 
@@ -122,7 +122,7 @@ Pin_avg_dBm = 10;                                       % Average power of optic
 Pin_avg_lin = 10^(Pin_avg_dBm/10)*1e-3;                 % Average power of optical pump, linear scale
 delta_freq = -45.0*1e9;                                 % Detuning frequency [Hz]
 omega_p = omega_resonance_0 - 2*pi*delta_freq;          % Angular pump frequency [rad/s]
-tau_d = 1.6e-9;                                         % Delay time in delay loop 
+tau_d = 0.5e-9;                                         % Delay time in delay loop 
 delta_phi = 0;                                          % Additional phase shift in delay loop
 phi_d = omega_p * tau_d + delta_phi;                    % Total phase shift in delay loop 
 seed = 11;                                              % Seed used for creating input signal, and target.
