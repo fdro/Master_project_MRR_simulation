@@ -48,7 +48,7 @@ function [P_drop, X_drop, time_axis_reduced, X_train, X_test, y_train, y_test, y
     y_test = y_test(:);
 
     % Regularization parameter used for ridge regression.
-    LAMBDA = 1e-9;
+    LAMBDA = 1e-9; % FDRO: was this optimized?
 
     % Train the linear readout weights using ridge regression.
     % The first element of W is the bias term.
