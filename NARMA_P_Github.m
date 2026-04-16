@@ -12,7 +12,7 @@ function [input, target]= NARMA_P_Github(total_L, P, seed)
         y(i+1) = 0.3*y(i) + 0.05*y(i)*sum(y(i-(P-1):i)) + 1.5*u(i-(P-1))*u(i) + 0.1;
             
         % Add a cliping functionality in case NARMA series blows off
-        % usually a tanh() nonlinearity is used to keep the series from
+        % FDRO: usually a tanh() nonlinearity is used to keep the series from
         % diverging
         if y(i+1) > 1
             y(i+1) = mean(y(1:i)); 
